@@ -33,9 +33,7 @@ export function component(options: ComponentOptions): Rule {
         ...options,
         ...strings,
         pure: options.pure === 'true',
-        functional: options.functional === 'true',
-        'if-functional': (s: string) => options.functional ? '' : s,
-        'if-class': (s: string) => !options.functional ? '' : s
+        functional: options.functional === 'true'
       }),
       move(options.path)
     ]);
