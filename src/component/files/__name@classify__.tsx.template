@@ -1,0 +1,35 @@
+import * as React from 'react';
+
+interface <%= classify(name) %>Props {
+  children?: any;
+}
+<% if (functional) { %>
+export const <%= classify(name)%> = (props: <%= classify(name) %>Props) => {
+  return (
+    <div className="<% if (className) { %><%= className %><% } else { %><%= dasherize(name) %><% } %>">
+      <%= classify(name) %>, works!
+    </div>
+  );
+};
+<% } else { %>
+interface <%= classify(name) %>State {
+
+}
+
+export class <%= classify(name) %> extends React.<% if (pure) { %>Pure<% } %>Component<<%= classify(name) %>Props, <%= classify(name) %>State> {
+  constructor(props: <%= classify(name) %>Props) {
+    super(props);
+    this.state = {
+
+    };
+  }
+
+  render() {
+    return (
+      <div className="<% if (className) { %><%= className %><% } else { %><%= dasherize(name) %><% } %>">
+        <%= classify(name) %>, works!
+      </div>
+    );
+  }
+}
+<% } %>
