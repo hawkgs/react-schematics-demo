@@ -10,7 +10,6 @@ import {
 import { strings } from '@angular-devkit/core';
 
 interface ComponentOptions {
-  generate?: string;
   path?: string;
   name?: string;
   className?: string;
